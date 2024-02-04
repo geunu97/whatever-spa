@@ -53,7 +53,8 @@ ul {
   margin: 0 0 50px 50px;
 }
 
-.blog .categories .active {
+.blog .categories .active, 
+.blog .category:hover {
   background-color: black;
   color: white;
 }
