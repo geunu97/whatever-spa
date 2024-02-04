@@ -34,7 +34,10 @@ ul {
 .header ul li {
   text-align: center;  
   font-size: 16px;
-  font-weight: 600;  
+  font-weight: 600;    
+}
+
+.header ul li .active {
   color: #ff6f0f;
 }
 
@@ -118,7 +121,7 @@ ul {
 
 .blogDetail .post .content {
   line-height: 2;  
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
