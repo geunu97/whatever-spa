@@ -23,6 +23,7 @@ ul {
 }
 
 .header img {
+  margin-top: 7px;
   width: 45px;  
 }
 
@@ -43,19 +44,39 @@ ul {
 
 /* ------------ blog ------------ */
 .blog {
-  padding-top: 30px;  
+  padding: 50px 0 100px;  
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.blog .categories {
+  margin: 0 0 50px 50px;
+}
+
+.blog .categories .active {
+  background-color: black;
+  color: white;
+}
+
+.blog .category {
+  border: none;
+  border-radius: 26px;
+  background-color: #f2f3f6;
+  color: #868b94;
+  padding: 10px 16px;
+  font-size: 16px;  
+  margin-right: 10px;  
+  cursor: pointer;
+}
+
 .blog .posts {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   gap: 90px;      
 }
 
 .blog .post {  
-  width: 400px; 
+  width: 450px; 
   margin: 0 auto;
   cursor: pointer;  
   transition:

@@ -1,4 +1,4 @@
-import { renderPage } from "./utils/renderPage.js"
+import { render } from "./utils/render.js"
 import { Home } from './page/home.js';
 import { Blog } from './page/blog.js';
 import { BlogDetail } from './page/blogDetail.js';
@@ -10,7 +10,7 @@ export const Index = () => {
     { path: 'blog/detail', component: BlogDetail },    
   ];
 
-  renderPage(routes);
+  render.page(routes);
 }
 
 Index();
