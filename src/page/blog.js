@@ -6,6 +6,10 @@ export const Blog = async () => {
   let selectedCategory = categories[0];
   const posts = await blog.getPosts();
 
+  if (posts.length === 0) {
+    return;
+  }
+
   const getFilteredPosts = () => {
     return selectedCategory === categories[0] ? posts : posts.filter((post) => post.category === selectedCategory);
   }
@@ -26,12 +30,16 @@ export const Blog = async () => {
   const getTemplate = () => {
     return `
       <div class="blog">
+        <a class="mainPost" href=#blog/detail?id=${posts[0].id}>
+          <img src=${posts[0].image} alt="게시글 대표이미지" width="200px"/>
+          <h2 class="title">${posts[0].title}</h2>
+          <p class="description">${posts[0].description}</p>
+        </a>
         <div class="categories">
           ${categories.map(category => (
             `<button class="category ${getActiveCategoryClass(category)}">${category}</button>`)
           ).join('')}
         </div>
-        
         <div class="posts">
           ${getFilteredPosts().map(post => (
             `

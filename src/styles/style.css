@@ -49,8 +49,28 @@ ul {
   margin: 0 auto;
 }
 
+.blog .mainPost {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog .mainPost img {
+  width: 90%;
+  border-radius: 15px;
+}
+
+.blog .mainPost .title {
+  font-size: 30px;
+}
+
+.blog .mainPost .description {
+  color: #868b94;
+}
+
 .blog .categories {
-  margin: 0 0 50px 50px;
+  margin: 70px 0 50px 50px;
 }
 
 .blog .categories .active, 
