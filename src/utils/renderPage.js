@@ -1,13 +1,14 @@
 import { Header } from '../components/header.js';
 import { NotFound } from '../page/notFound.js';
+import { hashLocation } from './hashLocation.js';
 
 export const renderPage = (routes) => {
   const $root = document.getElementById('root');
   
   const render = async () => {
-    try {      
-      const hash = window.location.hash.replace('#', '');    
-      const component = routes.find(route => route.path === hash)?.component || NotFound;
+    try {            
+      const path = hashLocation.path();
+      const component = routes.find(route => route.path === path)?.component || NotFound;
       $root.innerHTML = await getComponents(component);
     } catch (err) {
       console.error(err);
