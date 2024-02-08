@@ -1,0 +1,10 @@
+/** 바벨 설정 파일 (https://babeljs.io/docs/)
+ * @babel/core : 바벨의 코어
+ * @babel/preset-env : ES6 -> ES5 트랜스파일링
+ */
+
+ {
+  "presets": ["@babel/preset-env"],
+  "plugins": [],
+  "ignore": ["node_modules"]
+}

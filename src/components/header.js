@@ -1,4 +1,5 @@
 import { gwRouter } from "../lib/gwRouter.js"
+import mainLogo from "../../assets/img/mainLogo.png"
 
 export const Header = () => {
   const routes = [
@@ -14,7 +15,7 @@ export const Header = () => {
   const getTemplate = () => {
     return `    
       <div class="header">
-        <a href="#"><img src="/assets/img/mainLogo.png" alt="Main Logo"></a>      
+        <a href="#"><img src=${mainLogo} alt="Main Logo"></a>      
         <nav>
           <ul>
             ${routes.map(route => (
