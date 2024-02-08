@@ -1,15 +1,14 @@
-import { hashLocation } from '../utils/hashLocation.js';
-import { render } from "../utils/render.js"
+import { gwRouter } from "../lib/gwRouter.js"
 
 export const Header = () => {
   const routes = [
-    { path: '#', text: '홈' },
-    { path: '#blog', text: '블로그' },    
+    { path: '', content: '홈' },
+    { path: 'blog', content: '블로그' },    
   ];
 
   const getActiveClass = (route) => {
-    const mainPath = hashLocation.path().split('/')[0];
-    return route.path === `#${mainPath}` ? 'active' : '';
+    const mainPath = gwRouter.check.path().split('/')[0];
+    return route.path === `${mainPath}` ? 'active' : '';
   }
 
   const getTemplate = () => {
@@ -20,7 +19,7 @@ export const Header = () => {
           <ul>
             ${routes.map(route => (
               `
-                <li><a href=${route.path} class=${getActiveClass(route)}>${route.text}</a></li>                             
+                <li><a href=#${route.path} class=${getActiveClass(route)}>${route.content}</a></li>                             
               `          
             )).join('')}          
           </ul>      
@@ -29,5 +28,5 @@ export const Header = () => {
     `; 
   }  
 
-  render.mount(getTemplate());
+  return getTemplate();
 }

@@ -1,9 +1,9 @@
-import { hashLocation } from '../utils/hashLocation.js';
 import { blog } from '../api/blog.js';
-import { render } from "../utils/render.js"
+import { Header } from '../components/header.js';
+import { gwRouter } from "../lib/gwRouter.js"
 
 export const BlogDetail = async () => {
-  const blogId = hashLocation.params().id;
+  const blogId = gwRouter.check.params().id;
   if (!blogId) {
     return;
   }
@@ -15,6 +15,7 @@ export const BlogDetail = async () => {
 
   const getTemplate = () => {
     return `
+      ${Header()}
       <div class="blogDetail">
         <div class="post">
           <h1 class="title">${post.title}</h1>
@@ -26,5 +27,5 @@ export const BlogDetail = async () => {
     `;
   }
 
-  render.mount(getTemplate());
+  return getTemplate();
 };
