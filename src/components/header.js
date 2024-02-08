@@ -1,5 +1,6 @@
-import { gwRouter } from "../lib/gwRouter.js"
-import mainLogo from "../../assets/img/mainLogo.png"
+import { gwRouter } from "../utils/gwRouter.js"
+import mainLogo from "../../public/img/mainLogo.png"
+import '../styles/header.css';
 
 export const Header = () => {
   const routes = [

@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;  
+  padding: 15px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header img {
+  margin-top: 7px;
+  width: 45px;  
+}
+
+.header ul {  
+  display: flex;
+  gap: 20px;  
+}
+
+.header ul li {
+  text-align: center;  
+  font-size: 16px;
+  font-weight: 600;    
+}
+
+.header ul li .active {
+  color: #ff6f0f;
+}

@@ -1,4 +1,4 @@
-import { NotFound } from '../page/notFound.js';
+import { NotFound } from '../pages/notFound.js';
 
 // 초기화
 const init = (routes) => {

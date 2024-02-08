@@ -1,6 +1,8 @@
-import { blog } from '../api/blog.js';
+import { blog } from '../apis/blog.js';
 import { Header } from '../components/header.js';
-import { render } from "../utils/render.js"
+import { render } from "../utils/render.js";
+import sampleImage from "../../public/img/sample1.png";
+import '../styles/blog.css';
 
 export const Blog = async () => {  
   const categories = ['전체', '문화', '서비스', '커리어'];
@@ -33,7 +35,7 @@ export const Blog = async () => {
       ${Header()}
       <div class="blog">
         <a class="mainPost" href=#blog/detail?id=${posts[0].id}>
-          <img src=${posts[0].image} alt="게시글 대표이미지" width="200px"/>
+          <img src=${sampleImage} alt="게시글 대표이미지" width="200px"/>
           <h2 class="title">${posts[0].title}</h2>
           <p class="description">${posts[0].description}</p>
         </a>
@@ -46,7 +48,7 @@ export const Blog = async () => {
           ${getFilteredPosts().map(post => (
             `
               <a class="post" href=#blog/detail?id=${post.id}>
-                <img src=${post.image} alt="게시글 이미지"/>
+                <img src=${sampleImage} alt="게시글 이미지"/>
                 <h2 class="title">${post.title}</h2>
                 <p class="description">${post.description}</p>
                 <span class="category">${post.category}</span>

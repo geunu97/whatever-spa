@@ -2,7 +2,7 @@ import { fetchData } from '../utils/fetchData.js';
 
 export const blog = {
   getPosts: async () => {    
-    const posts = await fetchData('/mocks/dummy.json');  
+    const posts = await fetchData('/blog/posts');
     return posts;
   },
   
