@@ -1,4 +1,5 @@
 import { blog } from '../api/blog.js';
+import { Header } from '../components/header.js';
 import { render } from "../utils/render.js"
 
 export const Blog = async () => {  
@@ -29,6 +30,7 @@ export const Blog = async () => {
 
   const getTemplate = () => {
     return `
+      ${Header()}
       <div class="blog">
         <a class="mainPost" href=#blog/detail?id=${posts[0].id}>
           <img src=${posts[0].image} alt="게시글 대표이미지" width="200px"/>
@@ -56,6 +58,7 @@ export const Blog = async () => {
     `;
   }
 
-  document.body.addEventListener("click", handleCategoryClick) 
-  render.mount(getTemplate());  
+  document.body.addEventListener("click", handleCategoryClick)
+
+  return getTemplate();
 };

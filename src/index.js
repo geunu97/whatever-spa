@@ -1,7 +1,8 @@
-import { render } from "./utils/render.js"
+import { gwRouter } from "./lib/gwRouter.js"
 import { Home } from './page/home.js';
 import { Blog } from './page/blog.js';
 import { BlogDetail } from './page/blogDetail.js';
+import './styles/style.css';
 
 export const Index = () => {
   const routes = [
@@ -10,7 +11,8 @@ export const Index = () => {
     { path: 'blog/detail', component: BlogDetail },    
   ];
 
-  render.page(routes);
+  // Setup Router
+  gwRouter.init(routes);
 }
 
 Index();

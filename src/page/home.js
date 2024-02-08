@@ -1,11 +1,12 @@
-import { render } from "../utils/render.js"
+import { Header } from "../components/header.js";
 
 export const Home = () => {
-  const getTemplate = () => {
-    return `
+  const getTemplate = () => { 
+    return `     
+      ${Header()}
       <div>홈 페이지입니다.</div>
     `;
   }    
 
-  render.mount(getTemplate());
+  return getTemplate();
 };

@@ -1,5 +1,3 @@
-import { render } from "../utils/render.js"
-
 export const NotFound = () => {
   const getTemplate = () => {
     return `
@@ -7,5 +5,5 @@ export const NotFound = () => {
     `
   }
 
-  render.mount(getTemplate());
+  return getTemplate();
 }
