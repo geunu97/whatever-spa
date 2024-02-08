@@ -1,6 +1,8 @@
-import { blog } from '../api/blog.js';
+import { blog } from '../apis/blog.js';
 import { Header } from '../components/header.js';
-import { gwRouter } from "../lib/gwRouter.js"
+import { gwRouter } from "../utils/gwRouter.js"
+import sampleImage from "../../public/img/sample1.png";
+import '../styles/blogDetail.css';
 
 export const BlogDetail = async () => {
   const blogId = gwRouter.check.params().id;
@@ -20,7 +22,7 @@ export const BlogDetail = async () => {
         <div class="post">
           <h1 class="title">${post.title}</h1>
           <div class="info">${post.category} | ${post.date}</div>
-          <img src=${post.image} alt="게시글 이미지"/>
+          <img src=${sampleImage} alt="게시글 이미지"/>
           <div class="content">${post.content}</div>
         </div>
       </div>
