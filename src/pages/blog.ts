@@ -1,32 +1,32 @@
-import { blog } from '../apis/blog.js';
-import { Header } from '../components/header.js';
-import { render } from "../utils/render.js";
+import { blog } from '../apis/blog';
+import { Header } from '../components/header';
+import { render } from "../utils/render";
 import sampleImage from "../../public/img/sample1.png";
 import '../styles/blog.css';
 
 export const Blog = async () => {  
   const categories = ['전체', '문화', '서비스', '커리어'];
   let selectedCategory = categories[0];
-  const posts = await blog.getPosts();
 
+  const posts = await blog.getPosts();
   if (posts.length === 0) {
-    return;
+    return '';
   }
 
   const getFilteredPosts = () => {
     return selectedCategory === categories[0] ? posts : posts.filter((post) => post.category === selectedCategory);
   }
 
-  const handleCategoryClick = (e) => {
-    const clickedButton = e.target;
+    const handleCategoryClick = (e: MouseEvent): void => {
+    const clickedButton = e.target as HTMLButtonElement;
 
-    if(categories.includes(clickedButton.textContent)) {
-      selectedCategory = clickedButton.textContent;
+    if(categories.includes(clickedButton.textContent || '')) {
+      selectedCategory = clickedButton.textContent || '';
       render.refresh(getTemplate(), ".blog");  
     }
   };
 
-  const getActiveCategoryClass = (category) => {      
+  const getActiveCategoryClass = (category: string) => {      
     return selectedCategory === category ? 'active' : ''
   }
 

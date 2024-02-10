@@ -1,10 +1,12 @@
 export const render = {
-  refresh: (HTMLString, selector) => {
+  refresh: (HTMLString: string, selector: string) => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(HTMLString, 'text/html');
-    const content = doc.querySelector(selector).innerHTML;
+    const content = doc.querySelector(selector)?.innerHTML;
 
     const $target = document.querySelector(selector)    
-    $target.innerHTML = content;
+    if ($target) {
+      $target.innerHTML = content || '';
+    }
   }
 }

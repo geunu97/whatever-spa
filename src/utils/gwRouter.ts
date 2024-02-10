@@ -1,14 +1,29 @@
-import { NotFound } from '../pages/notFound.js';
+import { NotFound } from '../pages/notFound';
+
+// 타입
+interface RouterType {
+  init: (routes: { path: string; component: () => Promise<string> | string }[]) => void;
+  check: {
+    url: () => string;
+    path: () => string;
+    params: () => Record<string, string>;
+  };
+  move: {
+    push: (state: any, url: string) => void;
+  };
+}
 
 // 초기화
-const init = (routes) => {
+const init: RouterType['init'] = (routes) => {
   const $root = document.getElementById('root');
 
   const render = async () => {
     try {            
       const path = check.path();
-      const page = routes.find(route => route.path === path)?.component || NotFound;
-      $root.innerHTML = await page();
+      const page = await routes.find(route => route.path === path)?.component() || NotFound();
+      if ($root) {
+        $root.innerHTML = page;
+      }      
     } catch (err) {
       NotFound();      
     }
@@ -19,7 +34,7 @@ const init = (routes) => {
 }
 
 // 확인
-const check = {
+const check: RouterType['check'] = {
   url: () => {
     const hash = window.location.hash.replace('#', '');
     return hash;
@@ -35,7 +50,7 @@ const check = {
     const url = check.url();
     const queryString = url.split('?')[1] || '';
 
-    const queryParams = {};
+    const queryParams: Record<string, string> = {};
     queryString.split('&').forEach((param) => {
       const [key, value] = param.split('=');
       queryParams[key] = value;
@@ -46,7 +61,7 @@ const check = {
 }
 
 // 이동
-const move = {
+const move: RouterType['move'] = {
   push: (state, url) => {
     history.pushState(state, "", `#${url}`)
   }

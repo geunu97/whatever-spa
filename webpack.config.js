@@ -33,10 +33,10 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   devtool: "inline-source-map",
   resolve: {
-    extensions: [".css", ".js", ".jsx"],
+    extensions: [".css", ".js", ".jsx", ".ts", ".tsx"],
   },
   output: {
     filename: "main_[hash].js",
@@ -54,7 +54,13 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
+        exclude: /node_module/,
         loader: "babel-loader",
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_module/,
+        loader: "ts-loader",
       },
     ],
   },
