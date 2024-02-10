@@ -1,21 +1,21 @@
-import { blog } from '../apis/blog.js';
-import { Header } from '../components/header.js';
-import { gwRouter } from "../utils/gwRouter.js"
+import { blog } from '../apis/blog';
+import { Header } from '../components/header';
+import { gwRouter } from "../utils/gwRouter"
 import sampleImage from "../../public/img/sample1.png";
 import '../styles/blogDetail.css';
 
 export const BlogDetail = async () => {
   const blogId = gwRouter.check.params().id;
   if (!blogId) {
-    return;
+    return '';
   }
 
   const post = await blog.getPost(blogId);
-  if (!post.id) {
-    return;
+  if (!post) {
+    return '';
   }
 
-  const getTemplate = () => {
+  const getTemplate = () => {    
     return `
       ${Header()}
       <div class="blogDetail">

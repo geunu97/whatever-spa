@@ -1,4 +1,4 @@
-import { gwRouter } from "../utils/gwRouter.js"
+import { gwRouter } from "../utils/gwRouter"
 import mainLogo from "../../public/img/mainLogo.png"
 import '../styles/header.css';
 
@@ -8,9 +8,9 @@ export const Header = () => {
     { path: 'blog', content: '블로그' },    
   ];
 
-  const getActiveClass = (route) => {
+  const getActiveClass = (path: string) => {
     const mainPath = gwRouter.check.path().split('/')[0];
-    return route.path === `${mainPath}` ? 'active' : '';
+    return path === `${mainPath}` ? 'active' : '';
   }
 
   const getTemplate = () => {
@@ -21,7 +21,7 @@ export const Header = () => {
           <ul>
             ${routes.map(route => (
               `
-                <li><a href=#${route.path} class=${getActiveClass(route)}>${route.content}</a></li>                             
+                <li><a href=#${route.path} class=${getActiveClass(route.path)}>${route.content}</a></li>                             
               `          
             )).join('')}          
           </ul>      

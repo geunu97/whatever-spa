@@ -1,8 +1,8 @@
-import { gwRouter } from "./utils/gwRouter.js"
-import { Home } from './pages/home.js';
-import { Blog } from './pages/blog.js';
-import { BlogDetail } from './pages/blogDetail.js';
-import { apiWorker } from './mocks/apiHandler.js'
+import { gwRouter } from "./utils/gwRouter"
+import { Home } from './pages/home';
+import { Blog } from './pages/blog';
+import { BlogDetail } from './pages/blogDetail';
+import { apiWorker } from './mocks/apiHandler'
 import './styles/global.css';
 
 export const Index = () => {
