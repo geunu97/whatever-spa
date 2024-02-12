@@ -4,9 +4,9 @@ export const render = {
     const doc = parser.parseFromString(HTMLString, 'text/html');
     const content = doc.querySelector(selector)?.innerHTML;
 
-    const $target = document.querySelector(selector)    
+    const $target = document.querySelector(selector);
     if ($target) {
       $target.innerHTML = content || '';
     }
-  }
-}
+  },
+};
