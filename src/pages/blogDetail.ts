@@ -1,7 +1,7 @@
 import { blog } from '../apis/blog';
 import { Header } from '../components/header';
-import { gwRouter } from "../utils/gwRouter"
-import sampleImage from "../../public/img/sample1.png";
+import { gwRouter } from '../utils/gwRouter';
+import sampleImage from '../../public/img/sample1.png';
 import '../styles/blogDetail.css';
 
 export const BlogDetail = async () => {
@@ -15,7 +15,7 @@ export const BlogDetail = async () => {
     return '';
   }
 
-  const getTemplate = () => {    
+  const getTemplate = () => {
     return `
       ${Header()}
       <div class="blogDetail">
@@ -27,7 +27,7 @@ export const BlogDetail = async () => {
         </div>
       </div>
     `;
-  }
+  };
 
   return getTemplate();
 };

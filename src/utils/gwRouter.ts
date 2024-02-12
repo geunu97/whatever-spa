@@ -18,20 +18,20 @@ const init: RouterType['init'] = (routes) => {
   const $root = document.getElementById('root');
 
   const render = async () => {
-    try {            
+    try {
       const path = check.path();
-      const page = await routes.find(route => route.path === path)?.component() || NotFound();
+      const page = (await routes.find((route) => route.path === path)?.component()) || NotFound();
       if ($root) {
         $root.innerHTML = page;
-      }      
+      }
     } catch (err) {
-      NotFound();      
+      NotFound();
     }
   };
-    
-  window.addEventListener('hashchange', render);  
+
+  window.addEventListener('hashchange', render);
   window.addEventListener('DOMContentLoaded', render);
-}
+};
 
 // 확인
 const check: RouterType['check'] = {
@@ -41,7 +41,7 @@ const check: RouterType['check'] = {
   },
 
   path: () => {
-    const url = check.url();        
+    const url = check.url();
     const path = url.split('?')[0];
     return path;
   },
@@ -57,19 +57,19 @@ const check: RouterType['check'] = {
     });
 
     return queryParams;
-  }
-}
+  },
+};
 
 // 이동
 const move: RouterType['move'] = {
   push: (state, url) => {
-    history.pushState(state, "", `#${url}`)
-  }
-}
+    history.pushState(state, '', `#${url}`);
+  },
+};
 
 // 예외처리
 // const validate = {
 
 // }
-  
-export const gwRouter = { init, check, move }
+
+export const gwRouter = { init, check, move };
