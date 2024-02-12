@@ -18,10 +18,10 @@
 
 .header ul li {
   text-align: center;  
-  font-size: 16px;
+  font-size: var(--font-size-regular);
   font-weight: 600;    
 }
 
 .header ul li .active {
-  color: #ff6f0f;
+  color: var(--color-orange);
 }

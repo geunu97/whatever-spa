@@ -1,0 +1,18 @@
+:root {
+  /* 색상 */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray: #868b94;
+  --color-lightgray: #f2f3f6;
+  --color-orange: #ff6f0f;
+
+  /* 테두리 반경 */
+  --border-radius-large: 26px;
+  --border-radius-regular: 15px;
+
+  /* 폰트 크기 */
+  --font-size-large: 30px;
+  --font-size-subheading: 22px;
+  --font-size-regular: 16px;
+  --font-size-small: 14px;
+}

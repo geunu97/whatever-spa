@@ -4,6 +4,7 @@ import { Blog } from './pages/blog';
 import { BlogDetail } from './pages/blogDetail';
 import { apiWorker } from './mocks/apiHandler';
 import './styles/global.css';
+import './styles/variables.css';
 
 export const Index = () => {
   const routes = [

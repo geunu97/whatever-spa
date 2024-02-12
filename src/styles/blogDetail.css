@@ -13,13 +13,13 @@
 
 .blogDetail .post .info {
   text-align: center;  
-  color: #868b94;
+  color: var(--color-gray);
   margin-bottom: 70px;
 }
 
 .blogDetail .post img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: var(--border-radius-regular);
   margin-bottom: 70px;
 }
 
@@ -35,6 +35,6 @@
   }
 
   .blogDetail .post .title {
-    font-size: 30px;
+    font-size: var(--font-size-large);
   }
 }
